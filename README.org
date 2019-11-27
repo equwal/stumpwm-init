@@ -1,0 +1,39 @@
+#+title: stumpwm-init
+#+author: Spenser Truex
+#+email: web@spensertruex.com
+
+Custom stumpwm init. Should work out of the box without any configuration other
+than adding
+#+begin_src lisp
+(stumpwm:load-module :stumpwm-init)
+#+end_src
+to your ~.stumpwmrc~ (although there is some [[*Optional Configuration][optional configuration]]!).
+
+* Features
+  - Key remappings for Okular (pdf viewer) if it is installed. The bindings are
+    a Spacemacs-like Emacs/vim mix (which you may not like).
+  - Include a few lightweight contrib modules.
+  - ~poison~ command to banish and turn off mouse (q)
+  - Call xterm with the =Hack= font.
+  - Use a package to keep the namespace clean, export symbols for [[*Optional Configuration][optional
+    configuration]].
+* Optional Configuration
+** xterm
+Install the =Hack= font, or add your own to =stumpwm-init:*xterm-font*=.
+** poison
+Find your mouse's name with ~xinput --list~, and set it to ~*my-mouse*~.
+** app-menu
+Any programs in ~stumpwm-init:*app-menu*~ need to be installed to work:
+- xterm
+- nmtui
+- openoffice
+- gimp
+- pass
+- okular
+- pavucontrol
+- emacs
+You may also edit ~stumpwm-init:*app-menu*~ yourself.
+* Keybindings
+  Most can be found under the prefix (bound to =C-i=), but =M-`= (no prefix) is the app-menu.
+* Contributing
+Pull request onto the develop branch (not master).

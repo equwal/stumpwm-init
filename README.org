@@ -2,6 +2,7 @@
 #+author: Spenser Truex
 #+email: web@spensertruex.com
 
+*Warning: the ~pass~ module has a bug, and ~browse~ is not yet pulled into stumpwm-contrib.*
 Custom stumpwm init. Should work out of the box without any configuration other
 than adding
 #+begin_src lisp

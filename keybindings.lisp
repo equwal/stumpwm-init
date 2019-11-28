@@ -10,34 +10,50 @@
 (define-key *root-map* (kbd "B") "browse")
 (define-key *root-map* (kbd "C-y") "show-clipboard-history")
 
+(defvar *movement*
+  '(("C-j" . "Down")
+    ("C-k" . "Up")
+    ("C-b" . "S-SPC")
+    ("C-f" . "SPC"))
+  "Basic movement bindings.")
+(defvar *search*
+  ;; TODO: get f3 and shift+f3 working for FF/TOR/Okular.
+  '(("C-s" . "C-f"))
+  "Emacs-like searching.")
+(defvar *firefox*
+  ;; navigation
+  (append
+   *movement*
+   *search*
+   '(("M-<" . "Home")                    ; to top/botom
+     ("M->" . "End")
+     ("C-y" . "C-v")                     ;paste
+     ("C-g" . "ESC")
+     ("M-x" . "C-j")                     ; search bar focus
+     ;; find search
+     ("C-s" . "C-f")                     ; search in page
+     ("C-n" . "C-g")                     ; next match
+     ("C-p" . "C-G")                     ; prev match
+     ;; other useful ones:
+     ;; C-pgup/c-pgdown cycle tabs
+     ;; C-w kill tab
+     ("C-w" . "C-w")))
+  "Keybindings for firefox.")
 (define-remapped-keys
-    '(("(Firefox|Tor)"
-       ;; navigation
-       ("C-j" . "Down") ; by line
-       ("C-k" . "Up")
-       ("C-b" . "S-SPC") ; by page
-       ("C-f" . "SPC")
-       ("M-<" . "Home") ; to top/botom
-       ("M->" . "End")
-       ("C-y" . "C-v") ;paste
-       ("C-g" . "ESC")
-       ("M-x" . "C-j") ; search bar focus
-       ;; find search
-       ("C-s" . "C-f") ; search in page
-       ("C-n" . "C-g") ; next match
-       ("C-p" . "C-G") ; prev match
-       ;; other useful ones:
-       ;; C-pgup/c-pgdown cycle tabs
-       ;; C-w kill tab
-       ("C-w" . "C-w"))))
+    `(("Firefox" ,@*firefox*)))
 (define-remapped-keys
-    '(("Okular"
-       ("C-j" . "Down")
-       ("C-k" . "Up")
-       ("C-b" . "S-SPC")
-       ("C-f" . "SPC")
-       ("C-s" . "C-f")
-       ("M-w" . "C-c")
-       ("C-y" . "C-v")
-       ("M->" . "C-End")
-       ("M-<" . "C-Home"))))
+    `(("Tor" ,@*firefox*)))
+
+(define-remapped-keys
+    `(("okular"
+       ,@(append *movement*
+                 *search*
+                 '(("C-j" . "Down")
+                   ("C-k" . "Up")
+                   ("C-b" . "S-SPC")
+                   ("C-f" . "SPC")
+                   ("C-s" . "C-f")
+                   ("M-w" . "C-c")
+                   ("C-y" . "C-v")
+                   ("M->" . "C-End")
+                   ("M-<" . "C-Home"))))))

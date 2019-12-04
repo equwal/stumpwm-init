@@ -17,8 +17,9 @@
     ("C-f" . "SPC"))
   "Basic movement bindings.")
 (defvar *search*
-  ;; TODO: get f3 and shift+f3 working for FF/TOR/Okular.
-  '(("C-s" . "C-f"))
+  '(("C-s" . "C-f")
+    ("C-n" . "F3")
+    ("C-n" . "S-F3"))
   "Emacs-like searching.")
 (defvar *firefox*
   ;; navigation
@@ -31,9 +32,6 @@
      ("C-g" . "ESC")
      ("M-x" . "C-j")                     ; search bar focus
      ;; find search
-     ("C-s" . "C-f")                     ; search in page
-     ("C-n" . "C-g")                     ; next match
-     ("C-p" . "C-G")                     ; prev match
      ;; other useful ones:
      ;; C-pgup/c-pgdown cycle tabs
      ;; C-w kill tab
@@ -41,6 +39,10 @@
   "Keybindings for firefox.")
 (define-remapped-keys
     `(("Firefox" ,@*firefox*)))
+(define-remapped-keys
+    ;; A branding-free name for firefox
+    `(("Nightly" ,@*firefox*)))
+
 (define-remapped-keys
     `(("Tor" ,@*firefox*)))
 
@@ -55,5 +57,5 @@
                    ("C-s" . "C-f")
                    ("M-w" . "C-c")
                    ("C-y" . "C-v")
-                   ("M->" . "C-End")
-                   ("M-<" . "C-Home"))))))
+                   ("M->" . ("C" "End"))
+                   ("M-<" . ("C" "Home")))))))

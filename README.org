@@ -2,7 +2,6 @@
 #+author: Spenser Truex
 #+email: web@spensertruex.com
 
-*Warning: the ~pass~ module has a bug, and ~browse~ is not yet pulled into stumpwm-contrib.*
 Custom stumpwm init. Should work out of the box without any configuration other
 than adding
 #+begin_src lisp
@@ -37,4 +36,4 @@ You may also edit ~stumpwm-init:*app-menu*~ yourself.
 * Keybindings
   Most can be found under the prefix (bound to =C-i=), but =M-`= (no prefix) is the app-menu.
 * Contributing
-Pull request onto the develop branch (not master).
+Pull request onto the develop branch (not master). Also: =grep -RF -- TODO=.

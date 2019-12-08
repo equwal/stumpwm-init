@@ -26,6 +26,9 @@
    :*window-format*)
   (:export
    :*my-mouse* ;Set for the `poison' command to toggle it.
-   :*xterm-font* ;;settings for xterm to look nice.
+   :poison
    :*xterm-font-pt*
+   :*xterm-font*
+   :xterm
+   :deftermcom
    :pushnew-apps))

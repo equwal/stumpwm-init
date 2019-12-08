@@ -20,8 +20,19 @@ to your ~.stumpwmrc~ (although there is some [[*Optional Configuration][optional
 * Optional Configuration
 ** xterm
 Install the =Hack= font, or add your own to =stumpwm-init:*xterm-font*=.
+#+begin_src common-lisp
+(setf stumpwm-init:*xterm-font* "Hack"
+      stumpwm-init:*xterm-font-pt* 12)
+#+end_src
+** deftermcom
+Write commands which will be run and opened in the terminal. Useful for curses
+programs.
+#+begin_src common-lisp
+(stumpwm-init:deftermcom nmtui "-e nmtui" xterm)
+#+end_src
 ** poison
-Find your mouse's name with ~xinput --list~, and set it to ~*my-mouse*~. Turns the mouse all the way off using ~xinput~.
+Find your mouse's name with ~xinput --list~, and set it to
+~stumpwm-init:*my-mouse*~. Turns the mouse all the way off using ~xinput~.
 ** app-menu
 Add programs to the app menu (bound to =M-`= by default) using ~pushnew-apps~.
 This keeps them sorted alphabetically. Any programs in ~stumpwm-init:*app-menu*~
@@ -30,8 +41,6 @@ need to be installed to work:
 - web browser
 Example:
 #+begin_src common-lisp
-(defvar *xterm-font* "Hack"
-  "The name of the font to use for xterm.")
 (stumpwm-init:pushnew-apps '("eclipse" "eclipse")
                            '("spotify" "spotify")
                            '("gimp" "gimp")

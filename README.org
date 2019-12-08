@@ -21,18 +21,27 @@ to your ~.stumpwmrc~ (although there is some [[*Optional Configuration][optional
 ** xterm
 Install the =Hack= font, or add your own to =stumpwm-init:*xterm-font*=.
 ** poison
-Find your mouse's name with ~xinput --list~, and set it to ~*my-mouse*~.
+Find your mouse's name with ~xinput --list~, and set it to ~*my-mouse*~. Turns the mouse all the way off using ~xinput~.
 ** app-menu
-Any programs in ~stumpwm-init:*app-menu*~ need to be installed to work:
-- xterm
-- nmtui
-- openoffice
-- gimp
-- pass
-- okular
-- pavucontrol
+Add programs to the app menu (bound to =M-`= by default) using ~pushnew-apps~.
+This keeps them sorted alphabetically. Any programs in ~stumpwm-init:*app-menu*~
+need to be installed to work:
 - emacs
-You may also edit ~stumpwm-init:*app-menu*~ yourself.
+- web browser
+Example:
+#+begin_src common-lisp
+(defvar *xterm-font* "Hack"
+  "The name of the font to use for xterm.")
+(stumpwm-init:pushnew-apps '("eclipse" "eclipse")
+                           '("spotify" "spotify")
+                           '("gimp" "gimp")
+                           '("office" "openoffice")
+                           '("pass"
+                             ("copy" pass:pass-copy-menu)
+                             ("generate" pass:pass-generate))
+                           '("PDF" "okular")
+                           '("sound" "pavucontrol"))
+#+end_src
 * Keybindings
   Most can be found under the prefix (bound to =C-i=), but =M-`= (no prefix) is the app-menu.
 * Contributing

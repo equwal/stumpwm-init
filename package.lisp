@@ -28,4 +28,4 @@
    :*my-mouse* ;Set for the `poison' command to toggle it.
    :*xterm-font* ;;settings for xterm to look nice.
    :*xterm-font-pt*
-   :*app-menu*))
+   :pushnew-apps))

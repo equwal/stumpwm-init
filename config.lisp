@@ -1,16 +1,17 @@
 (in-package #:stumpwm-init)
 
+(defun pushnew-apps (&rest apps)
+  (dolist (app apps)
+    (pushnew app
+             app-menu::*app-menu*
+             :test #'string=
+             :key #'car))
+  (setf app-menu::*app-menu*
+        (sort app-menu::*app-menu* #'string< :key #'car)))
+
 (setq app-menu::*app-menu*
       '(("emacs" "emacs")
-        ("gimp" "gimp")
-        ("office" "openoffice")
-        ("pass"
-         ("copy" pass:pass-copy-menu)
-         ("generate" pass:pass-generate))
-        ("PDF" "okular")
-        ("sound" "pavucontrol")
-        ("web" browse:browse)
-        ("wifi" nmtui)))
+        ("web" browse:browse)))
 
 (setf *mode-line-timeout* 1)
 (setf *mode-line-foreground-color* "#98BDFB")

@@ -1,6 +1,4 @@
 (in-package #:stumpwm-init)
-(defvar *xterm-font* "Hack"
-  "The name of the font to use for xterm.")
 (defvar *xterm-font-pt* 12
   "The font size to call xterm with.")
 (defcommand xterm (&optional additional-argstr) ()

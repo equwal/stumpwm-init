@@ -2,7 +2,6 @@
   (:use #:cl)
   (:import-from :alexandria :once-only)
   (:import-from :clipboard-history :start-clipboard-manager)
-  (:import-from :slynk :create-server)
   (:import-from
    :stumpwm
    :banish

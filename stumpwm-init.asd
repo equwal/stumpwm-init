@@ -11,7 +11,7 @@
                :cffi
                :stumpwm
                :usocket-server
-	             :slynk
+	             ;; :slynk
                :percent-encoding
 
                ;; stumpwm-contrib

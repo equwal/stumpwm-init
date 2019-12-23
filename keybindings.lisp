@@ -9,8 +9,6 @@
 (define-key *root-map* (kbd "d") "poison")
 (define-key *root-map* (kbd "B") "browse")
 (define-key *root-map* (kbd "C-y") "show-clipboard-history")
-(define-key *root-map* (kbd "q") "quit")
-
 
 (defvar *movement*
   '(("C-j" . "Down")

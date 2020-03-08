@@ -19,6 +19,8 @@
 (setf *mode-line-border-color* "#028090")
 (setf *mode-line-background-color* "#191919")
 (setf *mode-line-foreground-color* "#98BDFB")
+
+(setf battery-portable:*prefer-sysfs* t)
 (setf *screen-mode-line-format*
       (list "[^B%n^b] %W^>" "%B | %d"))
 (setf *window-format* "%m%n%s%c")

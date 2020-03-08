@@ -5,5 +5,4 @@
 ;; start the polling timer process
 (start-clipboard-manager)
 
-(toggle-mode-line (current-screen)
-                  (current-head))
+(toggle-mode-line (current-screen) (current-head))

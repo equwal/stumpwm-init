@@ -1,19 +1,7 @@
 (in-package #:stumpwm-init)
-(defvar *xterm-font-pt* 12
-  "The font size to call xterm with.")
-(defvar *xterm-font* nil
-  "The font to call xterm with. Either a string (eg. \"Hack\") or NIL for
-none.")
 (defcommand xterm (&optional additional-argstr) ()
-  "Call xterm with a couple of settings arguments."
-  (run-shell-command
-   (concatenate 'string
-                "xterm"
-                (if *xterm-font*
-                    (concatenate 'string " -fa '" *xterm-font* "'")
-                    "")
-                " " "-fs " (format nil "~D" *xterm-font-pt*)
-                " " additional-argstr)))
+  "Call xterm."
+  (run-shell-command xterm))
 
 (defvar *toggle* nil)
 (defvar *my-mouse* "ETPS/2 Elantech Touchpad")

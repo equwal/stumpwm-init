@@ -53,5 +53,3 @@ Example:
 #+end_src
 * Keybindings
   Most can be found under the prefix (bound to =C-i=), but =M-`= (no prefix) is the app-menu.
-* Contributing
-Pull request onto the develop branch (not master). Also: =grep -RF -- TODO=.

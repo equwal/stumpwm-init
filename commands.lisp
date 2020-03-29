@@ -1,7 +1,6 @@
 (in-package #:stumpwm-init)
 (defcommand xterm (&optional additional-argstr) ()
-  "Call xterm."
-  (run-shell-command xterm))
+  (run-shell-command "xterm"))
 
 (defvar *toggle* nil)
 (defvar *my-mouse* "ETPS/2 Elantech Touchpad")

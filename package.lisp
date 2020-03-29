@@ -26,8 +26,6 @@
   (:export
    :*my-mouse* ;Set for the `poison' command to toggle it.
    :poison
-   :*xterm-font-pt*
-   :*xterm-font*
    :xterm
    :deftermcom
    :pushnew-apps))

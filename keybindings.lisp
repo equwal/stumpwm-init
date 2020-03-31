@@ -2,7 +2,6 @@
 
 (define-key *top-map* (kbd "M-`") "show-menu")
 
-(set-prefix-key (kbd "C-t"))
 (define-key *root-map* (kbd "c") "xterm")
 (define-key *root-map* (kbd "C-c") "xterm")
 (define-key *root-map* (kbd "E") "emacs")
